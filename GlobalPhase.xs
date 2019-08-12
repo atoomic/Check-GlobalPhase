@@ -11,8 +11,8 @@
 #include <perl.h>
 #include <XSUB.h>
 #include <embed.h>
- 
-#if PERL_REVISION >= 5 && PERL_VERSION >= 10  
+
+#if PERL_REVISION >= 5 && PERL_VERSION >= 10
 #   define CAN_USE_IX_FOR_PERL_PHASE 1
 #else
 #   define CAN_USE_IX_FOR_PERL_PHASE 0
@@ -49,13 +49,13 @@ PPCODE:
     } else if ( ix == 6 ) {
         phase = PERL_PHASE_DESTRUCT;
     }
-#endif    
+#endif
 
     if ( PL_phase == phase ) {
         XSRETURN_YES;
     } else {
-        XSRETURN_NO;    
-    }    
+        XSRETURN_NO;
+    }
 }
 
 SV*

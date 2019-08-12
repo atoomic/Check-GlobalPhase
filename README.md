@@ -4,7 +4,7 @@ Check::GlobalPhase - Check::GlobalPhase fast XS checker for GlobalPhase
 
 # VERSION
 
-version 0.002
+version 0.001
 
 # SYNOPSIS
 
