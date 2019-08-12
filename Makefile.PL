@@ -7,7 +7,7 @@ use 5.010;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Check::GlobalPhase fast XS checker for GlobalPhase",
+  "ABSTRACT" => "Check::GlobalPhase fast XS checker for Perl GlobalPhase",
   "AUTHOR" => "Nicolas R. <atoomic\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
