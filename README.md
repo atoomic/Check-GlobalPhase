@@ -4,7 +4,7 @@ Check::GlobalPhase - Check::GlobalPhase fast XS checker for Perl GlobalPhase
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
