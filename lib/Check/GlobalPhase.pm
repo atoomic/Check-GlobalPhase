@@ -61,7 +61,7 @@ Return a boolean value. True if ${^GLOBAL_PHASE} eq 'DESTRUCT'
 =head1 CONSTANTS
 
 You can use this constant to perform some bitmask check with the current Perl_Phase
-returned from L<current_phase>. (view synopsis)
+returned from C<current_phase>. (view L</SYNOPSIS>)
 
 =head2 PERL_PHASE_CONSTRUCT
 
