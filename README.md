@@ -94,7 +94,7 @@ Return a boolean value. True if ${^GLOBAL\_PHASE} eq 'DESTRUCT'
 # CONSTANTS
 
 You can use this constant to perform some bitmask check with the current Perl\_Phase
-returned from [current\_phase](https://metacpan.org/pod/current_phase). (view synopsis)
+returned from `current_phase`. (view ["SYNOPSIS"](#synopsis))
 
 ## PERL\_PHASE\_CONSTRUCT
 

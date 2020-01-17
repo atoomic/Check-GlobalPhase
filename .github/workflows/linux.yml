@@ -21,9 +21,10 @@ jobs:
        PERL_CARTON_PATH: $GITHUB_WORKSPACE/local
 
     strategy:
+      fail-fast: false
       matrix:
         perl-version:
-          - 'latest'
+          - '5.30'
           - '5.28'
           - '5.26'
           - '5.24'
@@ -34,17 +35,17 @@ jobs:
           - '5.14'
 
     container:
-      image: perl:${{ matrix.perl-version }}
+      image: perldocker/perl-tester:${{ matrix.perl-version }}
 
     steps:
       - uses: actions/checkout@v1
       - name: perl -V
         run: perl -V
+      - name: Install Author Dependencies
+        run: dzil authordeps | cpm install -g --show-build-log-on-failure -
       - name: Install Dependencies
-        run: curl -sL https://git.io/cpm | perl - install -g --show-build-log-on-failure
-      - name: perl Makefile.PL
-        run: perl Makefile.PL
-      - name: make
-        run: make
-      - name: Run Tests
-        run: make test
+        run: dzil listdeps | cpanm
+        # cannot use cpm due to https://github.com/skaji/cpm/issues/161
+        #run: dzil listdeps | cpm install -g --show-build-log-on-failure -
+      - name: dzil test
+        run: dzil test
